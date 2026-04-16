@@ -1,0 +1,46 @@
+<svg width="414" height="400" viewBox="0 0 414 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Large decorative circle -->
+  <circle cx="207" cy="200" r="140" fill="#f3e8ff" opacity="0.6"/>
+  <circle cx="207" cy="200" r="100" fill="#ede9fe" opacity="0.5"/>
+  <!-- Person body -->
+  <ellipse cx="207" cy="290" rx="50" ry="65" fill="#8b5cf6"/>
+  <!-- Raised arm (right) -->
+  <line x1="240" y1="260" x2="275" y2="220" stroke="#8b5cf6" stroke-width="14" stroke-linecap="round"/>
+  <!-- Head -->
+  <circle cx="207" cy="170" r="40" fill="#d4a574"/>
+  <!-- Hair -->
+  <path d="M167 160c0-26 18-42 40-42s40 16 40 42c0 4-1 7-2 10 0-20-16-34-38-34s-38 14-38 34c-1-3-2-6-2-10z" fill="#2d1b4e"/>
+  <!-- Smile -->
+  <path d="M195 180c4 6 12 8 20 4" stroke="#b8805a" stroke-width="2" stroke-linecap="round"/>
+  <!-- Eyes -->
+  <circle cx="195" cy="168" r="3" fill="#2d1b4e"/>
+  <circle cx="219" cy="168" r="3" fill="#2d1b4e"/>
+  <!-- Microphone -->
+  <rect x="198" y="215" width="18" height="30" rx="9" fill="#6d28d9"/>
+  <line x1="207" y1="245" x2="207" y2="262" stroke="#6d28d9" stroke-width="4" stroke-linecap="round"/>
+  <line x1="196" y1="262" x2="218" y2="262" stroke="#6d28d9" stroke-width="4" stroke-linecap="round"/>
+  <!-- Sound waves (right) -->
+  <path d="M260 155c8 12 8 30 0 42" stroke="#c4b5fd" stroke-width="4" stroke-linecap="round"/>
+  <path d="M275 140c12 20 12 48 0 65" stroke="#ddd6fe" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M290 125c16 26 16 60 0 82" stroke="#ede9fe" stroke-width="3" stroke-linecap="round"/>
+  <!-- Sound waves (left) -->
+  <path d="M154 155c-8 12-8 30 0 42" stroke="#c4b5fd" stroke-width="4" stroke-linecap="round"/>
+  <path d="M139 140c-12 20-12 48 0 65" stroke="#ddd6fe" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M124 125c-16 26-16 60 0 82" stroke="#ede9fe" stroke-width="3" stroke-linecap="round"/>
+  <!-- Sparkle stars -->
+  <circle cx="100" cy="100" r="5" fill="#c4b5fd"/>
+  <circle cx="320" cy="90" r="6" fill="#ddd6fe"/>
+  <circle cx="80" cy="250" r="4" fill="#e9d5ff"/>
+  <circle cx="340" cy="260" r="5" fill="#ddd6fe"/>
+  <circle cx="310" cy="150" r="4" fill="#c4b5fd"/>
+  <circle cx="110" cy="300" r="3" fill="#ede9fe"/>
+  <!-- Small floating speech elements -->
+  <rect x="290" y="200" width="50" height="24" rx="12" fill="white" opacity="0.8"/>
+  <circle cx="307" cy="212" r="2.5" fill="#c4b5fd"/>
+  <circle cx="315" cy="212" r="2.5" fill="#a78bfa"/>
+  <circle cx="323" cy="212" r="2.5" fill="#c4b5fd"/>
+  <rect x="70" y="210" width="50" height="24" rx="12" fill="white" opacity="0.8"/>
+  <circle cx="87" cy="222" r="2.5" fill="#c4b5fd"/>
+  <circle cx="95" cy="222" r="2.5" fill="#a78bfa"/>
+  <circle cx="103" cy="222" r="2.5" fill="#c4b5fd"/>
+</svg>

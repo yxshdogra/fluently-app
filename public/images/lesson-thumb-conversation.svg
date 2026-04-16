@@ -1,0 +1,13 @@
+<svg width="128" height="96" viewBox="0 0 128 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="96" rx="8" fill="#f3e8ff"/>
+  <!-- Chat bubble 1 (top-left) -->
+  <rect x="24" y="20" width="50" height="26" rx="13" fill="#8b5cf6"/>
+  <circle cx="38" cy="33" r="3" fill="#c4b5fd"/>
+  <circle cx="49" cy="33" r="3" fill="#ddd6fe"/>
+  <circle cx="60" cy="33" r="3" fill="#c4b5fd"/>
+  <!-- Chat bubble 2 (bottom-right) -->
+  <rect x="54" y="50" width="50" height="26" rx="13" fill="#a78bfa"/>
+  <circle cx="68" cy="63" r="3" fill="#ddd6fe"/>
+  <circle cx="79" cy="63" r="3" fill="#ede9fe"/>
+  <circle cx="90" cy="63" r="3" fill="#ddd6fe"/>
+</svg>

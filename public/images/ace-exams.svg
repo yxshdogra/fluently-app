@@ -1,0 +1,28 @@
+<svg width="280" height="248" viewBox="0 0 280 248" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="140" cy="124" r="90" fill="#f3e8ff"/>
+  <!-- Person body -->
+  <ellipse cx="140" cy="185" rx="32" ry="40" fill="#8b5cf6"/>
+  <!-- Arms up celebrating -->
+  <line x1="115" y1="170" x2="90" y2="130" stroke="#8b5cf6" stroke-width="10" stroke-linecap="round"/>
+  <line x1="165" y1="170" x2="190" y2="130" stroke="#8b5cf6" stroke-width="10" stroke-linecap="round"/>
+  <!-- Head -->
+  <circle cx="140" cy="108" r="26" fill="#d4a574"/>
+  <!-- Hair -->
+  <path d="M114 103c0-16 12-28 26-28s26 12 26 28c0 2-1 4-1 6 0-13-10-22-25-22s-25 9-25 22c0-2-1-4-1-6z" fill="#2d1b4e"/>
+  <!-- Graduation cap -->
+  <polygon points="140,75 105,90 140,100 175,90" fill="#6d28d9"/>
+  <rect x="137" y="72" width="6" height="10" fill="#6d28d9"/>
+  <line x1="172" y1="90" x2="172" y2="105" stroke="#6d28d9" stroke-width="2"/>
+  <circle cx="172" cy="107" r="3" fill="#c4b5fd"/>
+  <!-- Certificate/paper -->
+  <rect x="120" y="145" width="40" height="30" rx="3" fill="white"/>
+  <line x1="128" y1="155" x2="152" y2="155" stroke="#ddd6fe" stroke-width="2" stroke-linecap="round"/>
+  <line x1="128" y1="161" x2="148" y2="161" stroke="#ddd6fe" stroke-width="2" stroke-linecap="round"/>
+  <!-- Stars -->
+  <path d="M85 120l4 8 9 1-6 6 2 9-8-4-8 4 2-9-6-6 9-1z" fill="#fbbf24"/>
+  <path d="M200 100l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" fill="#fbbf24"/>
+  <circle cx="70" cy="80" r="3" fill="#c4b5fd"/>
+  <circle cx="220" cy="70" r="4" fill="#ddd6fe"/>
+  <circle cx="230" cy="150" r="3" fill="#e9d5ff"/>
+</svg>

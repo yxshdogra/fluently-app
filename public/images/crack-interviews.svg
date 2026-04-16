@@ -1,0 +1,27 @@
+<svg width="280" height="248" viewBox="0 0 280 248" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="140" cy="124" r="90" fill="#f3e8ff"/>
+  <!-- Desk -->
+  <rect x="60" y="160" width="160" height="8" rx="4" fill="#c4b5fd"/>
+  <rect x="70" y="168" width="6" height="40" rx="3" fill="#c4b5fd"/>
+  <rect x="204" y="168" width="6" height="40" rx="3" fill="#c4b5fd"/>
+  <!-- Interviewer (left) -->
+  <circle cx="105" cy="110" r="22" fill="#d4a574"/>
+  <path d="M83 105c0-14 10-24 22-24s22 10 22 24c0 2-1 4-1 5 0-12-9-20-21-20s-21 8-21 20c0-1-1-3-1-5z" fill="#2d1b4e"/>
+  <ellipse cx="105" cy="155" rx="28" ry="20" fill="#6d28d9"/>
+  <!-- Candidate (right) -->
+  <circle cx="180" cy="105" r="22" fill="#c68c5c"/>
+  <path d="M158 100c0-14 10-24 22-24s22 10 22 24c0 2-1 4-1 5 0-12-9-20-21-20s-21 8-21 20c0-1-1-3-1-5z" fill="#1a1033"/>
+  <ellipse cx="180" cy="150" rx="28" ry="20" fill="#8b5cf6"/>
+  <!-- Laptop on desk -->
+  <rect x="85" y="145" width="30" height="20" rx="3" fill="#a78bfa"/>
+  <rect x="80" y="160" width="40" height="4" rx="2" fill="#7c3aed"/>
+  <!-- Document -->
+  <rect x="155" y="148" width="20" height="16" rx="2" fill="white"/>
+  <line x1="159" y1="153" x2="171" y2="153" stroke="#ddd6fe" stroke-width="2" stroke-linecap="round"/>
+  <line x1="159" y1="157" x2="168" y2="157" stroke="#ddd6fe" stroke-width="2" stroke-linecap="round"/>
+  <!-- Confidence sparkles -->
+  <circle cx="215" cy="80" r="4" fill="#c4b5fd"/>
+  <circle cx="60" cy="90" r="3" fill="#ddd6fe"/>
+  <circle cx="230" cy="140" r="3" fill="#e9d5ff"/>
+</svg>
