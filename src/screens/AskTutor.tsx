@@ -93,7 +93,7 @@ export default function AskTutor() {
   return (
     <div className="absolute inset-0 flex flex-col">
       {/* Header */}
-      <div className="pt-[50px] md:pt-6 px-5 pb-4 flex items-center justify-between max-w-3xl mx-auto w-full">
+      <div className="pt-[50px] px-5 pb-4 flex items-center justify-between">
         <h1 className="font-jakarta font-bold text-[18px] text-text-primary">Ask Tutor</h1>
         <button className="bg-transparent border-none cursor-pointer p-1">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -105,7 +105,7 @@ export default function AskTutor() {
       </div>
 
       {/* Tutor profile */}
-      <div className="flex flex-col items-center px-5 pb-3 max-w-3xl mx-auto w-full">
+      <div className="flex flex-col items-center px-5 pb-3">
         <div className="relative">
           <div className="w-[64px] h-[64px] rounded-full overflow-hidden border-2 border-[rgba(140,48,232,0.2)]">
             <img src="/images/tutor-avatar.svg" alt="Fluently Tutor" className="w-full h-full" />
@@ -118,7 +118,7 @@ export default function AskTutor() {
 
       {/* Suggestion chips */}
       {suggestions && messages.length <= 1 && (
-        <div className="flex gap-2 px-5 pb-3 overflow-x-auto max-w-3xl mx-auto w-full">
+        <div className="flex gap-2 px-5 pb-3 overflow-x-auto">
           {suggestions.map((s) => (
             <button
               key={s.id}
@@ -133,14 +133,14 @@ export default function AskTutor() {
 
       {/* Messages */}
       <div className="flex-1 overflow-y-auto px-5 pb-4">
-        <div className="flex flex-col gap-3 max-w-3xl mx-auto">
+        <div className="flex flex-col gap-3">
           {messages.map((msg) => (
             <div
               key={msg.id}
               className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               <div
-                className={`max-w-[80%] md:max-w-[50%] rounded-[16px] px-4 py-3 ${
+                className={`max-w-[80%] rounded-[16px] px-4 py-3 ${
                   msg.role === 'user'
                     ? 'bg-[#8c30e8] text-white rounded-br-[4px]'
                     : 'bg-white shadow-sm text-text-primary rounded-bl-[4px]'
@@ -171,7 +171,7 @@ export default function AskTutor() {
 
       {/* Input */}
       <div className="px-4 pb-2 pt-2 bg-white/50">
-        <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm max-w-3xl mx-auto">
+        <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm">
           <input
             type="text"
             value={input}

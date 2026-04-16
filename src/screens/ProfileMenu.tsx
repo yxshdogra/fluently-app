@@ -79,9 +79,8 @@ export default function ProfileMenu() {
 
   return (
     <div className="absolute inset-0 overflow-y-auto">
-      <div className="max-w-lg mx-auto w-full">
       {/* Profile header */}
-      <div className="flex flex-col items-center pt-[60px] md:pt-8 pb-6">
+      <div className="flex flex-col items-center pt-[60px] pb-6">
         <div className="w-[80px] h-[80px] rounded-full bg-primary/10 flex items-center justify-center">
           {user?.avatar_url ? (
             <img src={user.avatar_url} alt="" className="w-full h-full rounded-full object-cover" />
@@ -134,7 +133,6 @@ export default function ProfileMenu() {
             Logout
           </span>
         </button>
-      </div>
       </div>
     </div>
   )

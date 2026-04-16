@@ -40,9 +40,9 @@ export default function Settings() {
   const currentLang = settings?.available_languages.find((l) => l.code === settings.language)
 
   return (
-    <div className="relative h-dvh overflow-hidden bg-gradient-to-b from-[#fef7fe] to-[#ecdffd] flex flex-col">
+    <div className="relative h-dvh overflow-hidden bg-gradient-to-b from-[#fef7fe] to-[#ecdffd]">
       {/* Header */}
-      <div className="pt-[50px] md:pt-6 px-5 pb-4 flex items-center gap-3 shrink-0 max-w-lg mx-auto w-full">
+      <div className="absolute top-[50px] left-0 right-0 px-5 flex items-center gap-3">
         <button onClick={() => navigate(-1)} className="bg-transparent border-none cursor-pointer p-1">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M15 18L9 12L15 6" stroke="#2c3970" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -51,7 +51,7 @@ export default function Settings() {
         <h1 className="font-jakarta font-bold text-[20px] text-text-primary">Setting</h1>
       </div>
 
-      <div className="px-5 flex flex-col gap-3 max-w-lg mx-auto w-full">
+      <div className="absolute top-[110px] left-5 right-5 flex flex-col gap-3">
         {/* Language option */}
         <div>
           <button

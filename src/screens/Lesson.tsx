@@ -78,9 +78,9 @@ export default function Lesson() {
   }
 
   return (
-    <div className="relative h-dvh overflow-hidden bg-gradient-to-b from-[#fef7fe] to-[#ecdffd] flex flex-col">
+    <div className="relative h-dvh overflow-hidden bg-gradient-to-b from-[#fef7fe] to-[#ecdffd]">
       {/* Header */}
-      <div className="shrink-0 h-[90px] md:h-auto md:py-4 flex items-end md:items-center justify-between px-5 pb-3 md:pb-0 max-w-2xl mx-auto w-full">
+      <div className="absolute top-0 left-0 right-0 h-[90px] flex items-end justify-between px-5 pb-3 z-10">
         <button onClick={() => navigate('/home')} className="bg-transparent border-none cursor-pointer p-1">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M15 18L9 12L15 6" stroke="#2c3970" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -101,63 +101,61 @@ export default function Lesson() {
         </div>
       </div>
 
-      {/* Scrollable content area */}
-      <div className="flex-1 overflow-y-auto px-5">
-        <div className="max-w-2xl mx-auto py-6 md:py-10 flex flex-col gap-6">
-          {/* Content card */}
-          <div className="bg-white/90 backdrop-blur-md rounded-[20px] p-6 border border-[rgba(0,0,0,0.08)] shadow-card">
-            <h2 className="font-jakarta font-bold text-[22px] text-[#0f1724] mb-2">
-              {lesson.title}
-            </h2>
-            <p className="font-jakarta text-[15px] text-text-primary leading-relaxed">
-              {lesson.content.prompt_text}
+      {/* Content card */}
+      <div className="absolute top-[200px] left-5 right-5 z-10">
+        <div className="bg-white/90 backdrop-blur-md rounded-[20px] p-6 border border-[rgba(0,0,0,0.08)] shadow-card">
+          <h2 className="font-jakarta font-bold text-[22px] text-[#0f1724] mb-2">
+            {lesson.title}
+          </h2>
+          <p className="font-jakarta text-[15px] text-text-primary leading-relaxed">
+            {lesson.content.prompt_text}
+          </p>
+          {lesson.content.instructions && (
+            <p className="font-jakarta text-[13px] text-text-muted mt-3">
+              {lesson.content.instructions}
             </p>
-            {lesson.content.instructions && (
-              <p className="font-jakarta text-[13px] text-text-muted mt-3">
-                {lesson.content.instructions}
-              </p>
-            )}
-          </div>
-
-          {/* Feedback card */}
-          {feedback && (
-            <div className="bg-white/95 backdrop-blur-md rounded-[16px] p-5">
-              <h3 className="font-jakarta font-bold text-[16px] text-text-primary mb-3">Your Score</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                <div className="bg-primary/5 rounded-[10px] p-3 text-center">
-                  <p className="font-jakarta font-bold text-[20px] text-primary">{feedback.overall_score}</p>
-                  <p className="font-jakarta text-[11px] text-text-muted">Overall</p>
-                </div>
-                <div className="bg-green-50 rounded-[10px] p-3 text-center">
-                  <p className="font-jakarta font-bold text-[20px] text-green-600">{feedback.pronunciation_score}</p>
-                  <p className="font-jakarta text-[11px] text-text-muted">Pronunciation</p>
-                </div>
-                <div className="bg-blue-50 rounded-[10px] p-3 text-center">
-                  <p className="font-jakarta font-bold text-[20px] text-blue-600">{feedback.fluency_score}</p>
-                  <p className="font-jakarta text-[11px] text-text-muted">Fluency</p>
-                </div>
-                <div className="bg-orange-50 rounded-[10px] p-3 text-center">
-                  <p className="font-jakarta font-bold text-[20px] text-orange-600">{feedback.grammar_score}</p>
-                  <p className="font-jakarta text-[11px] text-text-muted">Grammar</p>
-                </div>
-              </div>
-              {feedback.suggestions.length > 0 && (
-                <div className="mt-3">
-                  {feedback.suggestions.map((s, i) => (
-                    <p key={i} className="font-jakarta text-[13px] text-text-muted mt-1">• {s}</p>
-                  ))}
-                </div>
-              )}
-            </div>
           )}
         </div>
       </div>
 
-      {/* Controls — fixed at bottom */}
-      <div className="shrink-0 pb-8 pt-4 max-w-2xl mx-auto w-full px-5">
-        {/* Recording controls */}
-        {!feedback && (
-          <div className="flex justify-center items-center gap-6 mb-4">
+      {/* Feedback card */}
+      {feedback && (
+        <div className="absolute top-[440px] left-5 right-5 z-10">
+          <div className="bg-white/95 backdrop-blur-md rounded-[16px] p-5">
+            <h3 className="font-jakarta font-bold text-[16px] text-text-primary mb-3">Your Score</h3>
+            <div className="grid grid-cols-2 gap-2">
+              <div className="bg-primary/5 rounded-[10px] p-3 text-center">
+                <p className="font-jakarta font-bold text-[20px] text-primary">{feedback.overall_score}</p>
+                <p className="font-jakarta text-[11px] text-text-muted">Overall</p>
+              </div>
+              <div className="bg-green-50 rounded-[10px] p-3 text-center">
+                <p className="font-jakarta font-bold text-[20px] text-green-600">{feedback.pronunciation_score}</p>
+                <p className="font-jakarta text-[11px] text-text-muted">Pronunciation</p>
+              </div>
+              <div className="bg-blue-50 rounded-[10px] p-3 text-center">
+                <p className="font-jakarta font-bold text-[20px] text-blue-600">{feedback.fluency_score}</p>
+                <p className="font-jakarta text-[11px] text-text-muted">Fluency</p>
+              </div>
+              <div className="bg-orange-50 rounded-[10px] p-3 text-center">
+                <p className="font-jakarta font-bold text-[20px] text-orange-600">{feedback.grammar_score}</p>
+                <p className="font-jakarta text-[11px] text-text-muted">Grammar</p>
+              </div>
+            </div>
+            {feedback.suggestions.length > 0 && (
+              <div className="mt-3">
+                {feedback.suggestions.map((s, i) => (
+                  <p key={i} className="font-jakarta text-[13px] text-text-muted mt-1">• {s}</p>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Recording controls */}
+      <div className="absolute bottom-[100px] left-0 right-0 flex justify-center items-center gap-6 z-10">
+        {!feedback ? (
+          <>
             <button
               onClick={() => { setAudioBlob(null); setRecording(false) }}
               className="w-[48px] h-[48px] rounded-full bg-white shadow-sm border border-[rgba(0,0,0,0.08)] flex items-center justify-center cursor-pointer"
@@ -192,41 +190,41 @@ export default function Lesson() {
                 <path d="M7 4L13 10L7 16" stroke="#2c3970" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-          </div>
-        )}
+          </>
+        ) : null}
+      </div>
 
-        {/* CTA button */}
-        <div className="flex justify-center">
-          {audioBlob && !feedback ? (
-            <button
-              onClick={handleSubmitAudio}
-              disabled={submitting}
-              className="w-full max-w-[364px] h-[56px] rounded-[100px] flex items-center justify-center gap-2 text-white font-jakarta font-bold text-[16px] border-none cursor-pointer shadow-button"
-              style={{ background: 'linear-gradient(138deg, #8b5cf6 0%, #6d28d9 100%)' }}
-            >
-              {submitting ? 'Analyzing...' : 'Submit Recording'}
-            </button>
-          ) : feedback ? (
-            <button
-              onClick={handleComplete}
-              className="w-full max-w-[364px] h-[56px] rounded-[100px] flex items-center justify-center gap-2 text-white font-jakarta font-bold text-[16px] border-none cursor-pointer shadow-button"
-              style={{ background: 'linear-gradient(138deg, #8b5cf6 0%, #6d28d9 100%)' }}
-            >
-              Next
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M4 10H16M11 5L16 10L11 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          ) : !recording ? (
-            <button
-              onClick={startRecording}
-              className="w-full max-w-[364px] h-[56px] rounded-[100px] flex items-center justify-center gap-2 text-white font-jakarta font-bold text-[16px] border-none cursor-pointer shadow-button"
-              style={{ background: 'linear-gradient(138deg, #8b5cf6 0%, #6d28d9 100%)' }}
-            >
-              Start Recording
-            </button>
-          ) : null}
-        </div>
+      {/* Bottom CTA */}
+      <div className="absolute bottom-[30px] left-1/2 -translate-x-1/2 z-10">
+        {audioBlob && !feedback ? (
+          <button
+            onClick={handleSubmitAudio}
+            disabled={submitting}
+            className="w-[364px] h-[56px] rounded-[100px] flex items-center justify-center gap-2 text-white font-jakarta font-bold text-[16px] border-none cursor-pointer shadow-button"
+            style={{ background: 'linear-gradient(138deg, #8b5cf6 0%, #6d28d9 100%)' }}
+          >
+            {submitting ? 'Analyzing...' : 'Submit Recording'}
+          </button>
+        ) : feedback ? (
+          <button
+            onClick={handleComplete}
+            className="w-[364px] h-[56px] rounded-[100px] flex items-center justify-center gap-2 text-white font-jakarta font-bold text-[16px] border-none cursor-pointer shadow-button"
+            style={{ background: 'linear-gradient(138deg, #8b5cf6 0%, #6d28d9 100%)' }}
+          >
+            Next
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 10H16M11 5L16 10L11 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        ) : !recording ? (
+          <button
+            onClick={startRecording}
+            className="w-[364px] h-[56px] rounded-[100px] flex items-center justify-center gap-2 text-white font-jakarta font-bold text-[16px] border-none cursor-pointer shadow-button"
+            style={{ background: 'linear-gradient(138deg, #8b5cf6 0%, #6d28d9 100%)' }}
+          >
+            Start Recording
+          </button>
+        ) : null}
       </div>
     </div>
   )

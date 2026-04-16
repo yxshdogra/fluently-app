@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 
-export type Tab = 'home' | 'ask-tutor' | 'profile'
+type Tab = 'home' | 'ask-tutor' | 'profile'
 
 interface BottomNavProps {
   activeTab: Tab
 }
 
-export function HomeIcon({ active }: { active: boolean }) {
+function HomeIcon({ active }: { active: boolean }) {
   const color = active ? '#7c4dff' : '#6b7280'
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -21,7 +21,7 @@ export function HomeIcon({ active }: { active: boolean }) {
   )
 }
 
-export function ChatIcon({ active }: { active: boolean }) {
+function ChatIcon({ active }: { active: boolean }) {
   const color = active ? '#7c4dff' : '#6b7280'
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -36,7 +36,7 @@ export function ChatIcon({ active }: { active: boolean }) {
   )
 }
 
-export function ProfileIcon({ active }: { active: boolean }) {
+function ProfileIcon({ active }: { active: boolean }) {
   const color = active ? '#7c4dff' : '#6b7280'
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -58,7 +58,7 @@ export function ProfileIcon({ active }: { active: boolean }) {
   )
 }
 
-export const tabs: { id: Tab; label: string; icon: typeof HomeIcon; route: string }[] = [
+const tabs: { id: Tab; label: string; icon: typeof HomeIcon; route: string }[] = [
   { id: 'home', label: 'Home', icon: HomeIcon, route: '/home' },
   { id: 'ask-tutor', label: 'Ask to Tutor', icon: ChatIcon, route: '/ask-tutor' },
   { id: 'profile', label: 'Profile', icon: ProfileIcon, route: '/profile' },
@@ -68,7 +68,7 @@ export default function BottomNav({ activeTab }: BottomNavProps) {
   const navigate = useNavigate()
 
   return (
-    <div className="bg-white/95 backdrop-blur-sm border-t border-gray-100 pb-6 pt-2 px-4 md:hidden">
+    <div className="bg-white/95 backdrop-blur-sm border-t border-gray-100 pb-6 pt-2 px-4">
       <div className="flex justify-around items-center">
         {tabs.map(({ id, label, icon: Icon, route }) => (
           <button

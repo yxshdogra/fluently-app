@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
 import MainLayout from './components/layout/MainLayout'
-import MobileLayout from './components/layout/MobileLayout'
 import Splash from './screens/Splash'
 import Onboarding from './screens/Onboarding'
 import Login from './screens/Login'
@@ -25,32 +24,25 @@ export default function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-            {/* Public routes — constrained to phone width on desktop */}
-            <Route element={<MobileLayout />}>
-              <Route path="/" element={<Splash />} />
-              <Route path="/onboarding/:step" element={<Onboarding />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/verify-otp" element={<VerifyOtp />} />
-            </Route>
+            {/* Public routes */}
+            <Route path="/" element={<Splash />} />
+            <Route path="/onboarding/:step" element={<Onboarding />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/verify-otp" element={<VerifyOtp />} />
 
             {/* Protected routes */}
             <Route element={<ProtectedRoute />}>
-              {/* Onboarding flows — constrained to phone width */}
-              <Route element={<MobileLayout />}>
-                <Route path="/trial-offer" element={<TrialOffer />} />
-                <Route path="/assessment" element={<AssessmentIntro />} />
-                <Route path="/questionnaire/:step" element={<Questionnaire />} />
-                <Route path="/enter-name" element={<EnterName />} />
-                <Route path="/paywall" element={<Paywall />} />
-                <Route path="/profile/edit" element={<ProfileEdit />} />
-              </Route>
-
-              {/* Full-width responsive screens */}
+              <Route path="/trial-offer" element={<TrialOffer />} />
+              <Route path="/assessment" element={<AssessmentIntro />} />
+              <Route path="/questionnaire/:step" element={<Questionnaire />} />
+              <Route path="/enter-name" element={<EnterName />} />
+              <Route path="/paywall" element={<Paywall />} />
               <Route path="/lesson/:id" element={<Lesson />} />
+              <Route path="/profile/edit" element={<ProfileEdit />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/content/:slug" element={<ContentPage />} />
 
-              {/* Main app with sidebar/bottom nav */}
+              {/* Main app with bottom nav */}
               <Route element={<MainLayout />}>
                 <Route path="/home" element={<Home />} />
                 <Route path="/ask-tutor" element={<AskTutor />} />

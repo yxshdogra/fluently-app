@@ -230,136 +230,121 @@ export default function Home() {
 
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute top-[44px] md:top-0 bottom-0 left-0 right-0 overflow-y-auto">
-        <div className="max-w-5xl mx-auto px-5 md:px-8 pt-4 md:pt-8 pb-6">
-          {/* Header */}
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="font-jakarta font-extrabold text-[16px] text-[#0f1724] tracking-[-0.3px]">
-                {dashboard?.greeting || 'Good evening'}, {dashboard?.user_name || 'User'} 👋
-              </p>
-              <p className="font-jakarta font-medium text-[13px] text-[#6b7280] mt-1">
-                Let's practice speaking
-              </p>
-            </div>
-            {!dashboard?.is_premium && (
-              <button
-                onClick={() => navigate('/paywall')}
-                className="rounded-full px-3.5 py-1.5 border-none cursor-pointer shadow-[0px_4px_12px_0px_rgba(109,40,217,0.25)]"
-                style={{ background: 'linear-gradient(150deg, #8b5cf6 0%, #6d28d9 100%)' }}
-              >
-                <span className="font-jakarta font-extrabold text-[13px] text-white whitespace-nowrap">
-                  Become Prime ✨
-                </span>
-              </button>
-            )}
+      <div className="absolute top-[44px] bottom-0 left-0 right-0 overflow-y-auto">
+        {/* Header */}
+        <div className="px-5 pt-4 flex items-center justify-between">
+          <div>
+            <p className="font-jakarta font-extrabold text-[16px] text-[#0f1724] tracking-[-0.3px]">
+              {dashboard?.greeting || 'Good evening'}, {dashboard?.user_name || 'User'} 👋
+            </p>
+            <p className="font-jakarta font-medium text-[13px] text-[#6b7280] mt-1">
+              Let's practice speaking
+            </p>
           </div>
-
-          {/* Progress Overview Card */}
-          <div className="mt-5 relative backdrop-blur-[6px] bg-[rgba(255,255,255,0.8)] border border-[rgba(147,51,234,0.15)] rounded-[8px] shadow-[0px_8px_32px_0px_rgba(147,51,234,0.08)] p-6 overflow-hidden">
-            {/* Decorative gradient blob */}
-            <div
-              className="absolute -top-5 -right-5 w-[120px] h-[120px] rounded-full pointer-events-none"
-              style={{ background: 'radial-gradient(circle, rgba(147,51,234,0.1) 0%, rgba(147,51,234,0) 70%)' }}
-            />
-
-            <h2 className="font-jakarta font-extrabold text-[16px] text-[#0f1724] relative z-10">
-              Your Fluency Journey
-            </h2>
-
-            {/* Week indicators */}
-            <div className="mt-6 relative flex items-center justify-between px-1">
-              {/* Connecting line */}
-              <div className="absolute left-4 right-4 top-1/2 -translate-y-1/2 h-0.5 bg-[rgba(0,0,0,0.08)]" />
-
-              {Array.from({ length: totalWeeks }, (_, i) => {
-                const week = i + 1
-                const wp = dashboard?.progress?.weekly_progress.find((w) => w.week === week)
-                const isCurrentWeek = wp?.status === 'in_progress'
-                const isCompleted = wp?.status === 'completed'
-
-                return (
-                  <div key={week} className="relative z-10">
-                    {isCurrentWeek ? (
-                      <div className="w-7 h-7 rounded-full bg-[#7c4dff] border-2 border-[#7c4dff] flex items-center justify-center shadow-[0px_0px_0px_4px_rgba(147,51,234,0.2)]">
-                        <span className="font-jakarta font-extrabold text-[11px] text-white">W{week}</span>
-                      </div>
-                    ) : isCompleted ? (
-                      <div className="w-7 h-7 rounded-full bg-[#7c4dff] border-2 border-[#7c4dff] flex items-center justify-center">
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                          <path d="M2 6L5 9L10 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </div>
-                    ) : (
-                      <div className="w-7 h-7 rounded-full bg-white border-2 border-[rgba(0,0,0,0.08)] flex items-center justify-center">
-                        <LockIcon size={12} color="#9ca3af" />
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
-
-            {/* Encouragement banner */}
-            <div className="mt-6 bg-[rgba(147,51,234,0.06)] rounded-[6px] px-4 py-3 flex items-center justify-center gap-2">
-              <div className="w-2 h-2 rounded-[4px] bg-[#7c4dff] shadow-[0px_0px_0px_4px_rgba(147,51,234,0.15)]" />
-              <p className="font-jakarta font-bold text-[14px] text-[#7c4dff]">
-                {dashboard?.fluency_journey_label || "You're on Week 1 — Keep going!"}
-              </p>
-            </div>
-          </div>
-
-          {/* Carousel — scrolling on mobile, wrapping grid on desktop */}
-          <div className="mt-6 overflow-hidden md:overflow-visible">
-            <div
-              className="flex gap-3 md:flex-wrap md:justify-start md:[animation:none]"
-              style={{ animation: 'carousel-scroll 20s linear infinite', width: 'max-content' }}
-              onMouseEnter={(e) => { e.currentTarget.style.animationPlayState = 'paused' }}
-              onMouseLeave={(e) => { e.currentTarget.style.animationPlayState = 'running' }}
+          {!dashboard?.is_premium && (
+            <button
+              onClick={() => navigate('/paywall')}
+              className="rounded-full px-3.5 py-1.5 border-none cursor-pointer shadow-[0px_4px_12px_0px_rgba(109,40,217,0.25)]"
+              style={{ background: 'linear-gradient(150deg, #8b5cf6 0%, #6d28d9 100%)' }}
             >
-              {/* On mobile: duplicate for infinite scroll. On desktop: show once */}
-              {carouselItems.map((item, i) => (
-                <div
-                  key={`a-${i}`}
-                  className="shrink-0 w-[140px] h-[160px] bg-white rounded-[16px] border border-[#e6d2ff] shadow-sm flex flex-col items-center justify-end pb-4 px-3"
-                >
-                  <img src={item.image} alt={item.label} className="w-full h-[80px] rounded-[10px] mb-3 object-cover" />
-                  <span className="font-jakarta font-semibold text-[13px] text-[#0f1724] text-center leading-tight">
-                    {item.label}
-                  </span>
-                </div>
-              ))}
-              {/* Duplicate set — hidden on desktop */}
-              {carouselItems.map((item, i) => (
-                <div
-                  key={`b-${i}`}
-                  className="shrink-0 w-[140px] h-[160px] bg-white rounded-[16px] border border-[#e6d2ff] shadow-sm flex flex-col items-center justify-end pb-4 px-3 md:hidden"
-                >
-                  <img src={item.image} alt={item.label} className="w-full h-[80px] rounded-[10px] mb-3 object-cover" />
-                  <span className="font-jakarta font-semibold text-[13px] text-[#0f1724] text-center leading-tight">
-                    {item.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+              <span className="font-jakarta font-extrabold text-[13px] text-white whitespace-nowrap">
+                Become Prime ✨
+              </span>
+            </button>
+          )}
+        </div>
 
-          {/* Weekly Modules */}
-          <h2 className="font-jakarta font-extrabold text-[18px] text-[#0f1724] mt-8 mb-3">
-            Weekly Modules
+        {/* Progress Overview Card */}
+        <div className="mx-5 mt-5 relative backdrop-blur-[6px] bg-[rgba(255,255,255,0.8)] border border-[rgba(147,51,234,0.15)] rounded-[8px] shadow-[0px_8px_32px_0px_rgba(147,51,234,0.08)] p-6 overflow-hidden">
+          {/* Decorative gradient blob */}
+          <div
+            className="absolute -top-5 -right-5 w-[120px] h-[120px] rounded-full pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(147,51,234,0.1) 0%, rgba(147,51,234,0) 70%)' }}
+          />
+
+          <h2 className="font-jakarta font-extrabold text-[16px] text-[#0f1724] relative z-10">
+            Your Fluency Journey
           </h2>
 
-          <div className="flex flex-col md:grid md:grid-cols-2 gap-3">
-            {modules?.map((mod) => (
-              <WeekCard
-                key={mod.id}
-                mod={mod}
-                expanded={expandedWeeks.has(mod.week_number)}
-                onToggle={() => toggleWeek(mod.week_number)}
-                onPlay={handlePlay}
-              />
+          {/* Week indicators */}
+          <div className="mt-6 relative flex items-center justify-between px-1">
+            {/* Connecting line */}
+            <div className="absolute left-4 right-4 top-1/2 -translate-y-1/2 h-0.5 bg-[rgba(0,0,0,0.08)]" />
+
+            {Array.from({ length: totalWeeks }, (_, i) => {
+              const week = i + 1
+              const wp = dashboard?.progress?.weekly_progress.find((w) => w.week === week)
+              const isCurrentWeek = wp?.status === 'in_progress'
+              const isCompleted = wp?.status === 'completed'
+
+              return (
+                <div key={week} className="relative z-10">
+                  {isCurrentWeek ? (
+                    <div className="w-7 h-7 rounded-full bg-[#7c4dff] border-2 border-[#7c4dff] flex items-center justify-center shadow-[0px_0px_0px_4px_rgba(147,51,234,0.2)]">
+                      <span className="font-jakarta font-extrabold text-[11px] text-white">W{week}</span>
+                    </div>
+                  ) : isCompleted ? (
+                    <div className="w-7 h-7 rounded-full bg-[#7c4dff] border-2 border-[#7c4dff] flex items-center justify-center">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M2 6L5 9L10 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                  ) : (
+                    <div className="w-7 h-7 rounded-full bg-white border-2 border-[rgba(0,0,0,0.08)] flex items-center justify-center">
+                      <LockIcon size={12} color="#9ca3af" />
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Encouragement banner */}
+          <div className="mt-6 bg-[rgba(147,51,234,0.06)] rounded-[6px] px-4 py-3 flex items-center justify-center gap-2">
+            <div className="w-2 h-2 rounded-[4px] bg-[#7c4dff] shadow-[0px_0px_0px_4px_rgba(147,51,234,0.15)]" />
+            <p className="font-jakarta font-bold text-[14px] text-[#7c4dff]">
+              {dashboard?.fluency_journey_label || "You're on Week 1 — Keep going!"}
+            </p>
+          </div>
+        </div>
+
+        {/* Carousel */}
+        <div className="mt-6 overflow-hidden">
+          <div
+            className="flex gap-3 pl-5"
+            style={{ animation: 'carousel-scroll 20s linear infinite', width: 'max-content' }}
+            onMouseEnter={(e) => { e.currentTarget.style.animationPlayState = 'paused' }}
+            onMouseLeave={(e) => { e.currentTarget.style.animationPlayState = 'running' }}
+          >
+            {[...carouselItems, ...carouselItems].map((item, i) => (
+              <div
+                key={i}
+                className="shrink-0 w-[140px] h-[160px] bg-white rounded-[16px] border border-[#e6d2ff] shadow-sm flex flex-col items-center justify-end pb-4 px-3"
+              >
+                <img src={item.image} alt={item.label} className="w-full h-[80px] rounded-[10px] mb-3 object-cover" />
+                <span className="font-jakarta font-semibold text-[13px] text-[#0f1724] text-center leading-tight">
+                  {item.label}
+                </span>
+              </div>
             ))}
           </div>
+        </div>
+
+        {/* Weekly Modules */}
+        <h2 className="font-jakarta font-extrabold text-[18px] text-[#0f1724] px-5 mt-8 mb-3">
+          Weekly Modules
+        </h2>
+
+        <div className="px-5 pb-6 flex flex-col gap-3">
+          {modules?.map((mod) => (
+            <WeekCard
+              key={mod.id}
+              mod={mod}
+              expanded={expandedWeeks.has(mod.week_number)}
+              onToggle={() => toggleWeek(mod.week_number)}
+              onPlay={handlePlay}
+            />
+          ))}
         </div>
       </div>
     </div>
